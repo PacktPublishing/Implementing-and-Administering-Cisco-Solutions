@@ -1,0 +1,30 @@
+enable
+configure terminal
+hostname R1
+no ip domain-lookup
+enable secret cisco789
+banner motd %Only Authorized Access is permitted!!!%
+service password-encryption
+interface GigabitEthernet0/0
+description Connected to LAN 1 - 192.168.1.0/24 network
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+interface GigabitEthernet0/1
+description Connected to LAN 2 - 192.168.2.0/24 network
+ip address 192.168.2.1 255.255.255.0
+no shutdown
+exit
+username Admin secret class456
+line console 0
+login local
+exit
+ip domain-name ccna.local
+crypto key generate rsa
+1024
+line vty 0 15
+transport input ssh
+login local
+exit
+exit
+copy running-config startup-config 

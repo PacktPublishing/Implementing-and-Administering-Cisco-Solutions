@@ -1,0 +1,25 @@
+enable
+configure terminal
+hostname SW1
+no ip domain-lookup
+enable secret cisco789
+banner motd %Only Authorized Access is permitted!!!%
+service password-encryption
+interface vlan 1
+ip address 192.168.1.10 255.255.255.0
+no shutdown
+exit
+ip default-gateway 192.168.1.1
+username Admin secret class456
+line console 0
+login local
+exit
+ip domain-name ccna.local
+crypto key generate rsa
+1024
+line vty 0 15
+transport input ssh
+login local
+exit
+exit
+copy running-config startup-config 

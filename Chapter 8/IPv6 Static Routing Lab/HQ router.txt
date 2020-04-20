@@ -1,0 +1,106 @@
+HQ#show running-config 
+Building configuration...
+
+Current configuration : 1449 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname HQ
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524EDPL-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description WAN interface to MetroE
+ ip address 10.2.1.5 255.255.255.0
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:ABCD:1234:5::5/64
+!
+interface GigabitEthernet0/1
+ description Connected to the ISP router
+ ip address 192.0.2.2 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address FE80::2 link-local
+ ipv6 address 2001:ABCD:1234:6::2/64
+!
+interface GigabitEthernet0/2
+ description LAN interface for Branch A network
+ ip address 10.1.1.1 255.255.255.0
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:ABCD:1234:1::1/64
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 172.16.1.0 255.255.255.0 10.2.1.10 
+ip route 172.20.1.0 255.255.255.0 10.2.1.15 
+ip route 192.168.1.0 255.255.255.0 10.2.1.20 
+ip route 0.0.0.0 0.0.0.0 192.0.2.1 
+!
+ip flow-export version 9
+!
+ipv6 route 2001:ABCD:1234:2::/64 2001:ABCD:1234:5::10
+ipv6 route 2001:ABCD:1234:3::/64 2001:ABCD:1234:5::15
+ipv6 route 2001:ABCD:1234:4::/64 2001:ABCD:1234:5::20
+ipv6 route ::/0 2001:ABCD:1234:6::1
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+HQ# 

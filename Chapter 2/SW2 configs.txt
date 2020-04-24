@@ -1,25 +1,105 @@
-enable
-configure terminal
-hostname SW2
-no ip domain-lookup
-enable secret cisco789
-banner motd %Only Authorized Access is permitted!!!%
+SW2#show running-config 
+Building configuration...
+
+Current configuration : 1414 bytes
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
 service password-encryption
-interface vlan 1
-ip address 192.168.2.10 255.255.255.0
-no shutdown
-exit
-ip default-gateway 192.168.2.1
-username Admin secret class456
-line console 0
-login local
-exit
+!
+hostname SW2
+!
+enable secret 5 $1$mERr$B7IJJrJxq2fFyOs8ZEeVD1
+!
+!
+!
+no ip domain-lookup
 ip domain-name ccna.local
-crypto key generate rsa
-1024
-line vty 0 15
-transport input ssh
-login local
-exit
-exit
-copy running-config startup-config 
+!
+username Admin secret 5 $1$mERr$fUPSchZrwvVDQvkO1sLfl/
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 192.168.2.10 255.255.255.0
+!
+ip default-gateway 192.168.2.1
+!
+banner motd ^COnly Authorized Access is permitted!!!^C
+!
+!
+!
+line con 0
+ logging synchronous
+ login local
+!
+line vty 0 4
+ logging synchronous
+ login local
+line vty 5 15
+ logging synchronous
+ login local
+!
+!
+!
+!
+end
+
+
+SW2#

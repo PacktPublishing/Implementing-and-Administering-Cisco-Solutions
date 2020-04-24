@@ -1,0 +1,106 @@
+HQ#show running-config 
+Building configuration...
+
+Current configuration : 1315 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname HQ
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX15248UL7-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Connected to ISP
+ ip address 192.0.2.2 255.255.255.252
+ ip nat outside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ description Connected to Internal Server
+ ip address 172.16.1.1 255.255.255.0
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ description Connected to Metro E
+ ip address 192.0.2.5 255.255.255.252
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/1
+ network 172.16.1.0 0.0.0.255 area 0
+ network 192.0.2.4 0.0.0.3 area 0
+ default-information originate
+!
+ip nat inside source list NAT-LIST interface GigabitEthernet0/0 overload
+ip nat inside source static tcp 172.16.1.10 80 190.0.2.2 80 
+ip classless
+ip route 0.0.0.0 0.0.0.0 192.0.2.1 
+!
+ip flow-export version 9
+!
+!
+ip access-list standard NAT-LIST
+ permit 172.16.1.0 0.0.0.255
+ permit 10.1.2.0 0.0.0.255
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+HQ# 

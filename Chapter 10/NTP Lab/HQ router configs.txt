@@ -1,0 +1,93 @@
+HQ#show run
+Building configuration...
+
+Current configuration : 931 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname HQ
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524O7YZ-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Connected to HQ LAN network
+ ip address 192.168.1.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ description Connected to the Internet
+ ip address 209.65.200.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ description Connected to Metro Ethernet WAN
+ ip address 192.0.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 172.16.1.0 255.255.255.0 192.0.2.2 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+ntp server 209.65.200.10
+ntp master
+!
+end
+
+
+HQ#

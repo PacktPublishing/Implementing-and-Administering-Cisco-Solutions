@@ -1,0 +1,98 @@
+HQ#show running-config 
+Building configuration...
+
+Current configuration : 1121 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname HQ
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524SEMZ-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Connected to ISP router
+ ip address 192.0.2.2 255.255.255.252
+ ip access-group INT_Access out
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ description Connected to LAN1
+ ip address 192.168.1.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ description Connected to LAN2
+ ip address 172.16.1.1 255.255.255.0
+ ip access-group 10 out
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 192.0.2.1 
+!
+ip flow-export version 9
+!
+!
+access-list 10 permit host 192.168.1.10
+access-list 10 permit 10.1.1.0 0.0.0.255
+ip access-list standard INT_Access
+ remark Allowing devices on the 172.16.1.0/24 network only.
+ permit 172.16.1.0 0.0.0.255
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+HQ#

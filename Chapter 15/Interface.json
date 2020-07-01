@@ -1,0 +1,15 @@
+{
+    "ietf-interfaces:interface": {
+         "name": "GigabitEthernet0/1",
+         "description": "Connected to Wide Area Network (WAN)",
+         "enabled": true,
+         "ietf-ip:ipv4": {
+             "address": [
+                 {
+                     "ip": "172.16.1.1",
+                     "netmask": "255.255.255.0"
+                 }
+             ]
+          }
+    }
+}

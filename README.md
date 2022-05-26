@@ -1,3 +1,7 @@
+## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B16204?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
+-----
+For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
+
 # Implementing and Administering Cisco Solutions: 200-301 CCNA Exam Guide
 
 <a href="packtpub.com/product/implementing-and-administering-cisco-solutions-200-301-ccna-exam-guide/9781800208094?utm_source=github&utm_medium=repository&utm_campaign=9781800208094"><img src="https://static.packt-cdn.com/products/9781800208094/cover/smaller" alt="Implementing and Administering Cisco Solutions: 200-301 CCNA Exam Guide" height="256px" align="right"></a>

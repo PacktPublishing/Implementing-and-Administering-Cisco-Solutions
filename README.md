@@ -1,10 +1,4 @@
-
-<b><p align='center'>[(https://packt-data-analytics.s3.eu-west-1.amazonaws.com/Github+banners/1.png)]</p></b> 
-
-
-
-
-# Implementing and Administering Cisco Solutions: 200-301 CCNA Exam Guide
+ Implementing and Administering Cisco Solutions: 200-301 CCNA Exam Guide
 
 <a href="packtpub.com/product/implementing-and-administering-cisco-solutions-200-301-ccna-exam-guide/9781800208094?utm_source=github&utm_medium=repository&utm_campaign=9781800208094"><img src="https://static.packt-cdn.com/products/9781800208094/cover/smaller" alt="Implementing and Administering Cisco Solutions: 200-301 CCNA Exam Guide" height="256px" align="right"></a>
 

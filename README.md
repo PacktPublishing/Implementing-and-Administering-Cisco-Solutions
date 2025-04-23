@@ -1,7 +1,4 @@
 
-<b><p align='center'>[![Packt Sale](https://packt-data-analytics.s3.eu-west-1.amazonaws.com/Github+banners/1.png)](https://www.humblebundle.com/books/networking-mastery-packt-books?utm_medium=affiliate&utm_campaign=&utm_term=472505a3-5e1b-ea11-a812-00224801bc51&utm_content=)</p></b> 
-
-
 
 # Implementing and Administering Cisco Solutions: 200-301 CCNA Exam Guide
 

@@ -54,6 +54,9 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](http://www.packtpub.com/sites/default/files/downloads/9781800208094_ColorImages.pdf).
 
+## Errata
+* Page 31 (Paragraph 6, 6th Bullet point): It is mentioned that DHCP uses ports 68,69. Instead it _should be_ 67,68
+
 ## Code in Action
 
 Click on the following link to see the Code in Action:
